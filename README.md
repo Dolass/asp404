@@ -26,6 +26,7 @@
 * 将404错误指向 /index.asp
 * 在 Controller 下新建类文件
 * 开发说明
+
 		本测试程序 UrlRewrite规则是被写死的
 		[域名]/url1/url2/url3/ur4.html
 
