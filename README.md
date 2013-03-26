@@ -1,54 +1,43 @@
-**这是一个精简的demo实现，完整版和应用实例正在完成**
-
 系统要求
 -----
-* FSO支持
-* 支持自定义404
+* 支持 Scripting.FileSystemObject
+* 支持 Scripting.Dictionary
+* 支持 ADODB.Stream
+* 支持 ScriptControl
+* 支持 自定义404/405
 
-系统文件
+如何安装
 -----
-	│  Index.ASP			//主程序入口
-	│  Sys_Caller.ASP		//动态调用类、方法
-	│  Sys_Config.ASP		//系统配置
-	│  说明文档.txt			//本文档
-	│  
-	├─Controller			//Class主目录: http://xxx.xxx.xxx/class/ -> class.asp
-	│      hello.asp		//测试class hello
-	│      index.asp		//默认class
-	│      
-	├─Lib					//系统基础库
-	│      Sys_Functions.ASP	//常用函数库
-	│      Sys_Router.asp		//Url解析、动态加载ASp
-	│      
-	└─View					//模版
-			Default.tpl		//默认模版
+* 设置自定义 404错误 为URL指向 "/Index.ASP"
+* 设置自定义 405错误 为URL指向 "/Index.ASP"
+* 安装完成
 
-使用说明
+
+文件说明
 -----
-* 将404错误指向 /index.asp
-* 在 Controller 下新建类文件
-* 开发说明
+    ├─ Index.ASP    //程序入口
+	│ 
+    ├─ CORE         //系统内核
+	│   │
+	│   ├─ Base.ASP         //程序基本设置
+	│   ├─ Cache.ASP        //缓存类 [尚未开发]
+	│   ├─ DB.ASP           //DB操作
+	│   ├─ Function.ASP     //系统函数库
+	│   ├─ Router.ASP       //URL解析与动态调用的实现 [核心]
+	│   ├─ System.ASP       //系统配置与接口
+	│   └─ Theme.ASP        //模版
+	│ 
+    ├─controller    //默认控制器目录, 文件名与类名一致 ClassName.ASP / ClassName, 所有 Method 不带参数
+	│ 
+    ├─database      //默认数据目录
+	│ 
+    ├─style         //默认模版目录
+	│ 
+    ├─Config.ASP    //目录、数据库、调试开关等设置
+	│ 
+    └─htaccess.ASP  //Url正则Rewrite
 
-		本测试程序 UrlRewrite规则是被写死的
-		[域名]/url1/url2/url3/ur4.html
-
-		则建立: /Controller/url1.asp 文件, 文件内容为 class 定义, 且class name 必须为 url1
-		其中的方法 和参数不受任何限制，但是建议写 Index 方法用于默认调用
-
-		该class文件必须在头部插入
-			==============================================
-			<!--#include virtual="/Sys_Config.ASP"-->
-			<%Sys_Router()%>
-			==============================================
-		同时尾部必须插入
-			==============================================
-			<%Set Sys_Cls_Handler = New Index%>
-			<!--#include virtual="/Sys_Caller.ASP"-->
-			==============================================
-* Class的内部实现不受任何限制
-		
 其他
------	
-* 已存在的文件/目录会直接访问
-* 存在的目录下不存在的文件 会交给404 Handler 也就是会有本系统来全部处理
-		
+-----
+当前版本为demo, 框架本身十分精简和灵活，基础功能已全部实现, 具体说明查看代码即可。
+Cachce部分正在考虑是否有必要开发

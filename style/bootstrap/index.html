@@ -1,0 +1,34 @@
+{%include(header)%}
+	    
+    <div class="span6 offset2 {%content_css%}">
+      <a class="close">&times;</a>
+      {%content%}
+    </div>
+
+		<form class="form-horizontal" method="POST" action="/" style="margin:100px">		
+			<div class="control-group">
+				<label class="control-label" for="username">UserName: </label>
+				<div class="controls">
+				    <div class="input-prepend">
+						<span class="add-on"><i class="icon-user"></i></span><input type="text" id="username" name="username" style="margin:0;" />
+					</div>
+				</div>
+			</div>
+
+			<div class="control-group">
+				<label class="control-label" for="password">PassWord: </label>
+			    <div class="controls">
+			    	<div class="input-prepend">
+						<span class="add-on"><i class="icon-lock"></i></span><input type="password" id="password" name="password" style="margin:0;" />
+					</div>
+				</div>
+			</div>
+
+			<div class="control-group">
+			    <div class="controls">
+					<button type="submit" class="btn btn-primary">Login</button> <span class="badge">try to click</span>
+				</div>
+			</div>
+		</form>
+
+{%include(footer)%}
