@@ -41,7 +41,14 @@
 -----
 当前版本为demo, 框架本身十分精简和灵活，基础功能已全部实现, 具体说明查看代码即可。Cachce部分正在考虑是否有必要开发
 
-![index.index()](https://raw.github.com/superos/asp404/master/snap-1.png "Optional title")
-![index.hello()](https://raw.github.com/superos/asp404/master/snap-2.png "Optional title")
-![index.error404()](https://raw.github.com/superos/asp404/master/snap-3.png "Optional title")
-![index.notset()](https://raw.github.com/superos/asp404/master/snap-4.png "Optional title")
+默认首页，用bootstrap实现的一个登录框，通过 Sys.Server("HTTP_METHOD") 实现分离GET和/POST
+![index.index()](https://raw.github.com/superos/asp404/master/snap-1.png "index")
+
+所有类的方法都不带参数的，参数通过Router类解析之后提取到 Sys.Agrvs，实现ASP中 可选参数 的概念
+![index.hello()](https://raw.github.com/superos/asp404/master/snap-2.png "hello/jason && hello/")
+
+通过htaccess.asp中设置正则规则，所有未处理的请求都定向到自己的404页面上 
+![index.error404()](https://raw.github.com/superos/asp404/master/snap-3.png "404 Error")
+
+未定向到404 同时又未定义的方法 被请求时会提示未定义错误
+![index.notset()](https://raw.github.com/superos/asp404/master/snap-4.png "undefined class.method")
