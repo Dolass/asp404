@@ -39,5 +39,9 @@
 
 其他
 -----
-当前版本为demo, 框架本身十分精简和灵活，基础功能已全部实现, 具体说明查看代码即可。
-Cachce部分正在考虑是否有必要开发
+当前版本为demo, 框架本身十分精简和灵活，基础功能已全部实现, 具体说明查看代码即可。Cachce部分正在考虑是否有必要开发
+
+![index.index()](https://raw.github.com/superos/asp404/master/snap-1.png "Optional title")
+![index.hello()](https://raw.github.com/superos/asp404/master/snap-2.png "Optional title")
+![index.error404()](https://raw.github.com/superos/asp404/master/snap-3.png "Optional title")
+![index.notset()](https://raw.github.com/superos/asp404/master/snap-4.png "Optional title")
