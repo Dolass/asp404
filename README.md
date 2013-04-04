@@ -11,7 +11,7 @@
 * 设置自定义 404错误 为URL指向 "/Index.ASP"
 * 设置自定义 405错误 为URL指向 "/Index.ASP"
 * 安装完成
-
+* IIS6 / IIS7 中可能会遇到的问题：http://is.gd/dusEU4
 
 文件说明
 -----
